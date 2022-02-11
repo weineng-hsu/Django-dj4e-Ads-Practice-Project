@@ -70,6 +70,13 @@
 <p>
 {{ ad.text }}
 </p>
+{% if ad.tags.all %}
+<p>Tags:
+  {% for tag in ad.tags.all %}
+  <span style="border:1px grey solid; background-color: LightGreen;">{{ tag }}</span>
+  {% endfor %}
+</p>
+{% endif %}
 {% if ad.content_type %}
 <!--<div id="overlay" class="overlay" style="text-align: center;"
    onclick="document.getElementById('overlay').style.display = 'none';" >
